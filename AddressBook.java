@@ -71,36 +71,9 @@ public class addressBook {
 	public String getEmail() {
 		return this.email;
 	}
-	public static void editContact(String name) {
-		Scanner sc=new Scanner(System.in);
-		ArrayList<String> editedContact = new ArrayList<String>();
-		System.out.println("New Address:");
-		String address3 = sc.nextLine();
-		editedContact.add(address3);
-		System.out.println("New City:");
-		String city3 = sc.nextLine();
-		editedContact.add(city3);
-		System.out.println("New State:");
-		String state3 = sc.nextLine();
-		editedContact.add(state3);
-		System.out.println("New Zip:");
-		int zip3 = sc.nextInt();
-		String Zip3 = String.valueOf(zip3);
-		editedContact.add(Zip3);
-		System.out.println("New Phone Number:");
-		int phNum3 = sc.nextInt();
-		String PhNum3 = String.valueOf(phNum3);
-		editedContact.add(PhNum3);
-		System.out.println("New Email:");
-		String email3 = sc.next();
-		editedContact.add(email3);
-		System.out.println("The Edited Contact is");
-		for(String i:editedContact) {
-			System.out.println(i);
-		}
-		sc.close();
-		
-		
+	
+	public static void  delContact(String name) {
+		System.out.println("The contact of this person is deleted");
 	}
      public static void main(String[] args) {
 		addressBook obj = new addressBook("csd","csdc","cwdc","wfca","cda",9,0,"wcs");
@@ -140,9 +113,11 @@ public class addressBook {
 		System.out.println("Name of the Contact you want to edit");
 		String NameReq = sc.next();
 		System.out.println(NameReq);
-		editContact(NameReq);
+		delContact(NameReq);
 		sc.close();
 		
 
 	}
+
+}
 
