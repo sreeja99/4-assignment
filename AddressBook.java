@@ -1,6 +1,6 @@
 package addBook;
 import java.util.Scanner;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class addressBook {
 	String first_name;
@@ -71,6 +71,42 @@ public class addressBook {
 	public String getEmail() {
 		return this.email;
 	}
+	public void addCont() {
+		ArrayList<String> extraContact = new ArrayList<String>();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("First Name:");
+		String first_name2 = sc.nextLine();
+		extraContact.add(first_name2);
+		System.out.println("Last Name:");
+		String last_name2 = sc.nextLine();
+		extraContact.add(last_name2);
+		System.out.println("Address:");
+		String address2 = sc.nextLine();
+		extraContact.add(address2);
+		System.out.println("City:");
+		String city2 = sc.nextLine();
+		extraContact.add(city2);
+		System.out.println("State:");
+		String state2 = sc.nextLine();
+		extraContact.add(state2);
+		System.out.println("Zip Code:");
+		int zip2 = sc.nextInt();
+		String Zip2 = String.valueOf(zip2);
+		extraContact.add(Zip2);
+		System.out.println("Phone Number:");
+		int phNum2 =sc.nextInt();
+		String PhNum2 =String.valueOf(phNum2);
+		extraContact.add(PhNum2);
+		System.out.println("Email:");
+		String email2=sc.next();
+		extraContact.add(email2);
+		sc.close();
+		System.out.println("Your New Contact");
+		for(String i:extraContact) {
+			System.out.println(i);
+		}
+		
+	}
      public static void main(String[] args) {
 		addressBook obj = new addressBook("csd","csdc","cwdc","wfca","cda",9,0,"wcs");
 		Scanner sc=new Scanner(System.in);
@@ -106,7 +142,8 @@ public class addressBook {
 		System.out.println(obj.getZip());
 		System.out.println(obj.getphnNum());
 		System.out.println(obj.getEmail());
-//		obj.addCont();
+		obj.addCont();
+		sc.close();
 		
 
 	}
