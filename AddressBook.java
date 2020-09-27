@@ -71,40 +71,35 @@ public class addressBook {
 	public String getEmail() {
 		return this.email;
 	}
-	public void addCont() {
-		ArrayList<String> extraContact = new ArrayList<String>();
+	public static void editContact(String name) {
 		Scanner sc=new Scanner(System.in);
-		System.out.println("First Name:");
-		String first_name2 = sc.nextLine();
-		extraContact.add(first_name2);
-		System.out.println("Last Name:");
-		String last_name2 = sc.nextLine();
-		extraContact.add(last_name2);
-		System.out.println("Address:");
-		String address2 = sc.nextLine();
-		extraContact.add(address2);
-		System.out.println("City:");
-		String city2 = sc.nextLine();
-		extraContact.add(city2);
-		System.out.println("State:");
-		String state2 = sc.nextLine();
-		extraContact.add(state2);
-		System.out.println("Zip Code:");
-		int zip2 = sc.nextInt();
-		String Zip2 = String.valueOf(zip2);
-		extraContact.add(Zip2);
-		System.out.println("Phone Number:");
-		int phNum2 =sc.nextInt();
-		String PhNum2 =String.valueOf(phNum2);
-		extraContact.add(PhNum2);
-		System.out.println("Email:");
-		String email2=sc.next();
-		extraContact.add(email2);
-		sc.close();
-		System.out.println("Your New Contact");
-		for(String i:extraContact) {
+		ArrayList<String> editedContact = new ArrayList<String>();
+		System.out.println("New Address:");
+		String address3 = sc.nextLine();
+		editedContact.add(address3);
+		System.out.println("New City:");
+		String city3 = sc.nextLine();
+		editedContact.add(city3);
+		System.out.println("New State:");
+		String state3 = sc.nextLine();
+		editedContact.add(state3);
+		System.out.println("New Zip:");
+		int zip3 = sc.nextInt();
+		String Zip3 = String.valueOf(zip3);
+		editedContact.add(Zip3);
+		System.out.println("New Phone Number:");
+		int phNum3 = sc.nextInt();
+		String PhNum3 = String.valueOf(phNum3);
+		editedContact.add(PhNum3);
+		System.out.println("New Email:");
+		String email3 = sc.next();
+		editedContact.add(email3);
+		System.out.println("The Edited Contact is");
+		for(String i:editedContact) {
 			System.out.println(i);
 		}
+		sc.close();
+		
 		
 	}
      public static void main(String[] args) {
@@ -142,11 +137,12 @@ public class addressBook {
 		System.out.println(obj.getZip());
 		System.out.println(obj.getphnNum());
 		System.out.println(obj.getEmail());
-		obj.addCont();
+		System.out.println("Name of the Contact you want to edit");
+		String NameReq = sc.next();
+		System.out.println(NameReq);
+		editContact(NameReq);
 		sc.close();
 		
 
 	}
-
-}
 
