@@ -85,17 +85,30 @@ public class addressBook {
 			contactList.add(obj);
 		}
 		public void editContact(String firstName, String lastName, String address, String city, String state, int zip,
+				long phoneNumber, String email) {
+				for(addressBook obj:contactList) {
+					if(obj.getFirstName().equals(firstName)&&obj.getLastName().equals(lastName)) {
+						obj.setFirstName(firstName);
+						obj.setLastName(lastName);
+						obj.setAddress(address);
+						obj.setCity(city);
+						obj.setState(state);
+						obj.setPhoneNumber(phoneNumber);
+						obj.setEmail(email);
+						System.out.println("Contact updated successfully");
+						break;
+					}
+					else
+						System.out.println("There is no contact with that name");
+				}
+			}
+		
+	public void delContact(String firstName, String lastName, String address, String city, String state, int zip,
 			long phoneNumber, String email) {
 			for(addressBook obj:contactList) {
 				if(obj.getFirstName().equals(firstName)&&obj.getLastName().equals(lastName)) {
-					obj.setFirstName(firstName);
-					obj.setLastName(lastName);
-					obj.setAddress(address);
-					obj.setCity(city);
-					obj.setState(state);
-					obj.setPhoneNumber(phoneNumber);
-					obj.setEmail(email);
-					System.out.println("Contact updated successfully");
+					contactList.remove(obj);
+					System.out.println("Contact deleted successfully");
 					break;
 				}
 				else
@@ -140,8 +153,9 @@ public class addressBook {
  				sc.nextLine();
  				String email = sc.nextLine();
  				addressBook obj = new addressBook(firstName, lastName, address, city, state, zip, phoneNumber, email);
- 				person.addContact(obj);
+			        person.addContact(obj);
  				person.editContact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+				person.delContact(firstName, lastName, address, city, state, zip, phoneNumber, email);
  			}
  		}
  		sc.close();
@@ -152,3 +166,5 @@ public class addressBook {
 		
 
 	}
+
+	
